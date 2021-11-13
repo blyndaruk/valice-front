@@ -1,5 +1,5 @@
 {
-  "name": "my-project-name",
+  "name": "valice",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,12 +12,16 @@
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "dotenv": "^10.0.0",
     "postcss": "^7",
     "register-service-worker": "^1.7.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
+    "vue-meta": "^3.0.0-alpha.7",
+    "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
