@@ -15,6 +15,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // '~/assets/styles//tailwind.css',
+    '~/assets/styles/app',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,6 +34,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/composition-api/module',
+    ['@nuxtjs/dotenv', { filename: process.env.NODE_ENV === 'production' ? '.env.production' : '.env.local' }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -54,5 +58,33 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    hotMiddleware: {
+      client: {
+        autoConnect: false
+      }
+    },
+    postcss: {
+      plugins: {},
+      preset: {
+        autoprefixer: {
+          grid: true
+        }
+      }
+    }
+  },
+  tailwindcss: {
+    exposeConfig: true,
+    cssPath: '~/assets/styles/libs/tailwind.css'
+  },
+
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}'
+      }
+    }
+  },
+
+  assetsDir: '@/assets/',
+
 }
